@@ -1,0 +1,18 @@
+set encoding=utf-8
+set fileencoding=japan
+"set fileencodings=iso-2022-jp,utf-8,ucs2le,ucs-2,cp932,euc-jp
+"set fileencodings=utf-8,cp932,euc-jp
+""set termencoding=euc-jp
+set termencoding=utf-8
+
+set tabstop=4
+set shiftwidth=4
+
+set autoindent
+
+set vb
+set aw
+
+map z $
+
+nmap <ESC><ESC> :<C-u>nohlsearch<CR><Esc>
