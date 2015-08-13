@@ -21,7 +21,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y oracle-java8-set-default
 
 
 # editor and others.
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim git
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim git maven
 
 RUN cd /root \
  && wget -O vert.x-2.1.6.tar.gz https://bintray.com/artifact/download/vertx/downloads/vert.x-2.1.6.tar.gz \
@@ -39,6 +39,12 @@ RUN apt-get update && apt-get clean
 RUN  git config --global user.email "masatoshi9953@gmail.com" &&   git config --global user.name "Masatoshi Itoh" && git config --global core.editor 'vim -c "set fenc=utf-8"'
 
 ADD vimrc /root/.vimrc
+
+RUN cd /root \
+ && git clone https://github.com/vert-x/vertx-gradle-template.git \
+ && cd /root/vertx-gradle-template \
+ && ./gradlew install
+
 
 # EXPOSE 80 443
 CMD [ "/bin/bash" ]
