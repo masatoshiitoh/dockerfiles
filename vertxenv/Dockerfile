@@ -39,6 +39,8 @@ RUN apt-get update && apt-get clean
 RUN  git config --global user.email "masatoshi9953@gmail.com" &&   git config --global user.name "Masatoshi Itoh" && git config --global core.editor 'vim -c "set fenc=utf-8"'
 
 ADD vimrc /root/.vimrc
+ADD HelloWorldVerticle.java /root/HelloWorldVerticle.java
+ADD run-vertx.sh /root/run-vertx.sh
 
 RUN cd /root \
  && git clone https://github.com/vert-x/vertx-gradle-template.git \
@@ -46,6 +48,6 @@ RUN cd /root \
  && ./gradlew install
 
 
-# EXPOSE 80 443
+EXPOSE 80 443 8080 8443
 CMD [ "/bin/bash" ]
 
