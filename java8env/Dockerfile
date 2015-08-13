@@ -14,6 +14,8 @@ RUN apt-get install -y oracle-java8-installer
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y oracle-java8-set-default
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim git
 
+RUN  git config --global user.email "masatoshi9953@gmail.com" &&   git config --global user.name "Masatoshi Itoh" && git config --global core.editor 'vim -c "set fenc=utf-8"'
+
 ADD vimrc /root/.vimrc
 
 # EXPOSE 80 443

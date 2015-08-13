@@ -29,6 +29,8 @@ RUN  git clone http://github.com/nativelibs4java/JNAerator.git \
 
 RUN apt-get update && apt-get clean
 
+RUN  git config --global user.email "masatoshi9953@gmail.com" &&   git config --global user.name "Masatoshi Itoh" && git config --global core.editor 'vim -c "set fenc=utf-8"'
+
 ADD vimrc /root/.vimrc
 
 # EXPOSE 80 443

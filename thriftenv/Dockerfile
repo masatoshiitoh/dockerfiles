@@ -8,7 +8,7 @@ MAINTAINER Masatoshi Itoh <masatoshi9953@gmail.com>
 
 RUN sed -i~ -e 's/archive.ubuntu.com/ftp.jaist.ac.jp/' /etc/apt/sources.list \
  && apt-get update \
- && apt-get install -y build-essential libboost-dev libboost-test-dev libboost-program-options-dev libboost-system-dev libboost-filesystem-dev libevent-dev automake libtool flex bison pkg-config g++ libssl-dev curl wget dpkg php5-dev php5-cli phpunit erlang-base erlang-eunit erlang-dev \
+ && apt-get install -y build-essential libboost-dev libboost-test-dev libboost-program-options-dev libboost-system-dev libboost-filesystem-dev libevent-dev automake libtool flex bison pkg-config g++ libssl-dev curl wget dpkg php5-dev php5-cli phpunit erlang erlang-base erlang-eunit erlang-dev \
  && apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common \
  && add-apt-repository ppa:webupd8team/java \
@@ -45,8 +45,12 @@ RUN git clone https://github.com/apache/thrift.git \
 
 RUN apt-get update && apt-get clean
 
+RUN git config --global user.email "masatoshi9953@gmail.com" && git config --global user.name "Masatoshi Itoh" && git config --global core.editor 'vim -c "set fenc=utf-8"'
+
+RUN  git config --global user.email "masatoshi9953@gmail.com" &&   git config --global user.name "Masatoshi Itoh" && git config --global core.editor 'vim -c "set fenc=utf-8"'
+
 ADD vimrc /root/.vimrc
 
-# EXPOSE 80 443
+EXPOSE 9999
 CMD [ "/bin/bash" ]
 
