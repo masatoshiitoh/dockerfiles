@@ -32,6 +32,11 @@ RUN apt-get update && apt-get clean
 RUN  git config --global user.email "masatoshi9953@gmail.com" &&   git config --global user.name "Masatoshi Itoh" && git config --global core.editor 'vim -c "set fenc=utf-8"'
 
 ADD vimrc /root/.vimrc
+ADD dylibhello.c /root/dylibhello.c
+ADD hello.h /root/hello.h
+ADD main.c /root/main.c
+ADD make.sh /root/make.sh
+ADD Main.java /root/Main.java
 
 # EXPOSE 80 443
 CMD [ "/bin/bash" ]
