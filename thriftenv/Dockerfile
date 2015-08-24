@@ -24,7 +24,7 @@ RUN wget http://ftp.jp.debian.org/debian/pool/main/a/automake-1.15/automake_1.15
 RUN dpkg -i automake_1.15-3_all.deb
 
 # editor and others.
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim git
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim git ant
 
 # thrift 0.9.2
  
