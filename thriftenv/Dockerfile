@@ -20,8 +20,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y oracle-java8-set-default
 
 # automake
 
-RUN wget http://ftp.jp.debian.org/debian/pool/main/a/automake-1.15/automake_1.15-2_all.deb
-RUN dpkg -i automake_1.15-2_all.deb
+RUN wget http://ftp.jp.debian.org/debian/pool/main/a/automake-1.15/automake_1.15-3_all.deb
+RUN dpkg -i automake_1.15-3_all.deb
 
 # editor and others.
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim git
