@@ -17,6 +17,7 @@ RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true 
 RUN apt-get update && apt-get clean
 RUN apt-get install -y oracle-java8-installer
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y oracle-java8-set-default
+RUN apt-get install -y ant
 
 # automake
 

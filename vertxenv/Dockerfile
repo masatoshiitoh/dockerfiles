@@ -23,16 +23,20 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y oracle-java8-set-default
 # editor and others.
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim git maven
 
-RUN cd /root \
- && wget -O vert.x-2.1.6.tar.gz https://bintray.com/artifact/download/vertx/downloads/vert.x-2.1.6.tar.gz \
- && tar xzf vert.x-2.1.6.tar.gz \
- && echo "PATH=/root/vert.x-2.1.6/bin:\$PATH" >> /root/.bashrc
+#RUN cd /root \
+# && wget -O vert.x-2.1.6.tar.gz https://bintray.com/artifact/download/vertx/downloads/vert.x-2.1.6.tar.gz \
+# && tar xzf vert.x-2.1.6.tar.gz \
+# && echo "PATH=/root/vert.x-2.1.6/bin:\$PATH" >> /root/.bashrc
+
+#RUN cd /root \
+# && wget https://services.gradle.org/distributions/gradle-2.6-bin.zip \
+# && unzip gradle-2.6-bin.zip \
+# && echo "PATH=/root/gradle-2.6/bin:\$PATH" >> /root/.bashrc
 
 RUN cd /root \
- && wget https://services.gradle.org/distributions/gradle-2.6-bin.zip \
- && unzip gradle-2.6-bin.zip \
- && echo "PATH=/root/gradle-2.6/bin:\$PATH" >> /root/.bashrc
-
+ && git clone https://github.com/eclipse/vert.x
+# && cd /root/vert.x \
+# && mvn test
 
 RUN apt-get update && apt-get clean
 
